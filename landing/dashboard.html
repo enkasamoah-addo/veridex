@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Veridex | SEC Scam Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+body{background:#faf7ef}
+header .nav{height:60px}
+.tag{font-family:var(--body);font-size:12px;font-weight:600;background:#111;color:#fff;border-radius:999px;padding:4px 12px;margin-left:12px;vertical-align:middle}
+.top{display:flex;align-items:center}
+.wrap{max-width:1360px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:22px 0}
+.stat{background:#fff;border-radius:16px;padding:16px 18px;border:1.5px solid #f0e3c0}
+.stat b{display:block;font-family:var(--display);font-size:34px;line-height:1.1}
+.stat small{color:var(--muted);font-size:13px}
+.stat.red b{color:var(--red)}
+.grid{display:grid;grid-template-columns:420px 1fr;gap:18px;align-items:start;padding-bottom:50px}
+@media(max-width:980px){.grid{grid-template-columns:1fr}}
+.panel{background:#fff;border-radius:18px;border:1.5px solid #f0e3c0;overflow:hidden}
+.ph{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 18px;border-bottom:1.5px solid #f4ead0;flex-wrap:wrap}
+.ph h2{margin:0;font-size:22px;text-align:left}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1.5px solid #e8d49c;background:#fff;border-radius:999px;padding:4px 12px;font-size:12.5px;cursor:pointer;font-family:var(--body)}
+.chip.on{background:var(--yellow);border-color:var(--yellow);font-weight:600}
+#list{max-height:calc(100vh - 290px);min-height:360px;overflow:auto}
+.row{display:flex;gap:12px;align-items:flex-start;padding:13px 18px;border-bottom:1px solid #f6efdc;cursor:pointer}
+.row:hover{background:#fffaf0}.row.sel{background:#fff3d1}
+.dot{width:12px;height:12px;border-radius:50%;margin-top:6px;flex:none}
+.dot.RED{background:var(--red)}.dot.YELLOW{background:#e0a100}.dot.GREEN{background:var(--green)}
+.row b{font-size:15px;display:block}.row small{color:var(--muted);font-size:12.5px}
+.badge{font-size:11px;font-weight:600;border-radius:999px;padding:2px 9px;background:#eee;margin-left:6px;white-space:nowrap}
+.badge.lead{background:#e6efff;color:#1d4fa8}.badge.ananse_engaged{background:#e9defa;color:#5b2aa8}
+.badge.reported_by_user{background:#fff0c9;color:#8a5a00}
+.badge.warning_approved,.badge.referred,.badge.momo_flag_requested{background:#dcf5e3;color:#1b6b34}
+.badge.dismissed{background:#eee;color:#666}
+#detail{padding:22px 24px;min-height:420px}
+.empty{color:var(--muted);text-align:center;padding:90px 20px}
+.dh{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;flex-wrap:wrap}
+.dh h2{text-align:left;font-size:30px;margin:0 0 4px}
+.lvl{display:inline-block;color:#fff;font-weight:700;font-size:13px;border-radius:999px;padding:4px 14px}
+.lvl.RED{background:var(--red)}.lvl.YELLOW{background:#c98a00}.lvl.GREEN{background:var(--green)}
+.ananse{background:#111;color:#fff;border:0;border-radius:999px;padding:12px 24px;font-family:var(--display);font-size:18px;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.ananse:disabled{opacity:.6;cursor:wait}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+@media(max-width:1180px){.two{grid-template-columns:1fr}}
+h4{font-family:var(--display);font-weight:400;font-size:19px;margin:0 0 8px}
+ul.r{padding-left:18px;margin:0;font-size:14px}ul.r li{margin:5px 0}
+.ev{display:grid;gap:8px}
+.evr{background:#fff7e0;border-radius:12px;padding:10px 12px;font-size:13.5px}
+.evr b{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:#8a5a00;margin-bottom:3px}
+.tok{display:inline-block;background:#fff;border:1.5px solid #f1b42a;border-radius:8px;padding:2px 9px;margin:2px 4px 2px 0;font-family:ui-monospace,Consolas,monospace;font-size:13px}
+.chat{background:#f7f3e8;border-radius:14px;padding:14px;max-height:420px;overflow:auto;display:flex;flex-direction:column;gap:9px}
+.msg{max-width:88%;padding:9px 13px;border-radius:14px;font-size:14px;animation:pop .25s ease}
+.msg small{display:block;font-size:11px;opacity:.65;margin-bottom:2px;font-weight:600}
+.msg.scammer{background:#fff;border:1.5px solid #ead9a8;align-self:flex-start}
+.msg.zeus{background:#111;color:#fff;align-self:flex-end}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;padding-top:18px;border-top:1.5px solid #f4ead0}
+.act{border:1.5px solid #111;background:#fff;border-radius:999px;padding:10px 18px;font-family:var(--display);font-size:16px;cursor:pointer}
+.act:hover{background:#111;color:#fff}.act.ok{background:var(--green);border-color:var(--green);color:#fff}
+.note{font-size:12.5px;color:var(--muted);margin-top:10px}
+.sim{background:#fff3d1;border:1.5px solid var(--yellow);border-radius:12px;padding:8px 12px;font-size:12.5px;margin-top:14px}
+.tools{display:flex;gap:10px;align-items:center}
+.tools button{border:1.5px solid #111;background:transparent;border-radius:999px;padding:7px 16px;font-family:var(--display);font-size:15px;cursor:pointer}
+.brief{background:#111;color:#fff;border-radius:16px;padding:14px 18px;margin-top:16px}
+.brief b{font-family:var(--display);font-weight:400;font-size:18px}.brief p{margin:6px 0;font-size:14px}
+.brief ul.r li{font-size:13.5px}.brief .next{color:#f1b42a;font-weight:600;margin-top:8px}
+.site{border:1.5px solid #f0e3c0;border-radius:12px;padding:10px 12px;margin-bottom:8px}
+.site .sh{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:14px}.site .sh span{color:var(--muted);font-size:12.5px}
+.site .st{font-size:12.5px;color:#555;margin:4px 0}
+.f-bad{color:#a11}.f-warn{color:#8a5a00}.f-ok{color:#1b6b34}.f-info{color:#666}
+.badge.ananse_waiting,.badge.ananse_engaged,.badge.ananse_triaging{background:#e9defa;color:#5b2aa8}
+.badge.evidence_ready{background:#dcf5e3;color:#1b6b34}.badge.new{background:#eee}
+a.ananse{text-decoration:none}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <div class="top"><a class="logo" href="/">Veridex</a><span class="tag">SEC Scam Desk</span></div>
+  <div class="tools"><a href="/ananse.html" target="_blank" style="font-size:14px;font-weight:600">Ananse live chat</a><a href="/" style="font-size:14px">Public site</a></div>
+</div></header>
+
+<div class="wrap">
+  <div class="stats" id="stats"></div>
+  <div class="grid">
+    <div class="panel">
+      <div class="ph"><h2>Cases</h2><div class="chips" id="chips"></div></div>
+      <div id="seedWrap" style="display:none;padding:12px 18px;border-bottom:1px solid #f6efdc"><button class="act" id="seedBtn" style="font-size:14px;padding:7px 14px">Load SEC warning list</button><div class="note">Real names the SEC has published as unlicensed. Ananse tracks them here.</div></div><div id="list"></div>
+    </div>
+    <div class="panel"><div id="detail"><div class="empty">Pick a case on the left.<br><small>New reports from the Telegram bot and website appear here automatically.</small></div></div></div>
+  </div>
+</div>
+
+<script>
+const API = location.origin.startsWith("http") ? location.origin : "http://localhost:8000";
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const STATUS = {new:"Queued", ananse_triaging:"Ananse investigating", ananse_waiting:"Ananse waiting for reply", ananse_engaged:"Ananse in conversation", evidence_ready:"Evidence ready", ananse_failed:"Ananse error", lead:"SEC watchlist", reported_by_user:"Reported by citizen", warning_approved:"Warning approved", momo_flag_requested:"MoMo flag requested", referred:"Referred to CSA", dismissed:"Dismissed"};
+const SRC = {telegram_user:"Telegram", web_user:"Website", sec_watchlist:"SEC warning list", ananse:"Ananse"};
+const FILTERS = [["flagged","Flagged"],["ready","Evidence ready"],["watch","SEC watchlist"],["all","All checks"]];
+let cases = [], filter = "flagged", selected = null;
+
+async function j(path, opts) { const r = await fetch(API + path, opts); if (!r.ok) throw new Error(r.status); return r.json(); }
+function ago(iso){ const s=(Date.now()-new Date(iso))/1000; if(isNaN(s))return ""; if(s<90)return "just now"; if(s<5400)return Math.round(s/60)+" min ago"; if(s<129600)return Math.round(s/3600)+" h ago"; return Math.round(s/86400)+" d ago"; }
+const isCitizen = c => c.source==="telegram_user"||c.source==="web_user";
+
+async function refresh() {
+  try {
+    const [st, cs] = await Promise.all([j("/api/stats"), j("/api/cases")]);
+    cases = cs; renderStats(st); renderList();
+    if (selected) renderDetail(await j("/api/cases/" + selected));
+  } catch (e) { $("stats").innerHTML = '<div class="stat"><b>!</b><small>Cannot reach the API. Is it running?</small></div>'; }
+}
+function renderStats(s) {
+  const flagged = cases.filter(c => isCitizen(c) && c.level !== "GREEN").length;
+  const items = [["Checks received", cases.filter(isCitizen).length, ""], ["Flagged", flagged, "red"], ["Ananse working", s.ananse_cases - s.evidence_ready, ""], ["Evidence ready", s.evidence_ready, ""], ["Scam identifiers on record", s.identifiers_flagged, ""]];
+  $("stats").innerHTML = items.map(([l,v,c]) => `<div class="stat ${c}"><b>${v}</b><small>${l}</small></div>`).join("");
+}
+function matches(c) {
+  if (filter==="all") return c.source!=="sec_watchlist";
+  if (filter==="watch") return c.source==="sec_watchlist";
+  if (filter==="ready") return c.status==="evidence_ready";
+  return isCitizen(c) && c.level!=="GREEN";
+}
+function renderList() {
+  $("chips").innerHTML = FILTERS.map(([k,l]) => `<span class="chip ${filter===k?"on":""}" data-k="${k}">${l}</span>`).join("");
+  document.querySelectorAll(".chip").forEach(el => el.onclick = () => { filter = el.dataset.k; renderList(); });
+  const rows = cases.filter(matches);
+  $("seedWrap").style.display = filter==="watch" ? "block" : "none";
+  $("list").innerHTML = rows.length ? rows.map(c => `<div class="row ${c.id===selected?"sel":""}" data-id="${c.id}">
+      <span class="dot ${c.level}"></span><div><b>${esc(c.entity || "Unnamed offer")}<span class="badge ${c.status}">${STATUS[c.status]||c.status}</span></b>
+      <small>#${c.id} · ${SRC[c.source]||c.source} · ${ago(c.created)}</small></div></div>`).join("")
+    : '<div class="empty" style="padding:50px 20px">Nothing here yet.<br><small>When someone checks an offer in the bot or on the website and it is flagged, it appears here by itself, with Ananse\'s evidence.</small></div>';
+  document.querySelectorAll(".row").forEach(el => el.onclick = () => open(+el.dataset.id));
+}
+async function open(id) { selected = id; renderList(); renderDetail(await j("/api/cases/" + id)); }
+
+function evHTML(ev) {
+  const L = {momo_numbers:"MoMo / phone numbers", bank_accounts:"Bank accounts", banks:"Bank named", account_names:"Name on the payment account", links:"Links & websites", handles:"Telegram / social handles", promised_returns:"Promised returns", licence_claimed:"Licence number they claim", site_contacts:"Contacts found on their website"};
+  const rows = Object.keys(L).filter(k => (ev[k]||[]).length).map(k => `<div class="evr"><b>${L[k]}</b>${ev[k].map(x=>`<span class="tok">${esc(x)}</span>`).join("")}</div>`);
+  return rows.length ? `<div class="ev">${rows.join("")}</div>` : '<p class="note">Nothing captured yet.</p>';
+}
+function acctHTML(list) {
+  if (!list || !list.length) return '<p class="note">No payment account captured yet.</p>';
+  return list.map(a => `<div class="site"><div class="sh"><b>${esc(a.id)}</b><span>${esc(a.network || (a.bank ? a.bank : "bank account"))}${a.bank && a.network ? " · " + esc(a.bank) : ""}</span></div>
+    <ul class="r">${a.verified_name ? `<li class="f-ok">Registered holder: <b>${esc(a.verified_name)}</b> (${esc(a.verified_by)})</li>` : '<li class="f-info">Holder name not verifiable from a bank record. MoMo names show only inside the payer\'s MoMo app.</li>'}
+    ${a.known_names.length ? `<li class="f-bad">Earlier reports named the holder: ${a.known_names.map(esc).join(", ")}</li>` : ""}
+    ${a.seen_in.length ? `<li class="f-bad">Seen in ${a.seen_in.length} other case(s): ${a.seen_in.map(i=>"#"+i).join(", ")}</li>` : '<li class="f-info">Not seen in earlier cases.</li>'}</ul></div>`).join("");
+}
+function siteHTML(list) {
+  if (!list || !list.length) return '<p class="note">No website was named in this offer.</p>';
+  return list.map(s => `<div class="site"><div class="sh"><b>${esc(s.domain)}</b><span>${s.fetched ? "page opened" : "page not reachable"}${s.age_days!=null ? " · " + s.age_days + " days old" : ""}</span></div>
+    ${s.title ? `<div class="st">“${esc(s.title)}”</div>` : ""}
+    <ul class="r">${s.findings.filter(f=>f.sev!=="info"||true).map(f=>`<li class="f-${f.sev}">${esc(f.text)}</li>`).join("")}</ul></div>`).join("");
+}
+function renderDetail(c) {
+  const ev = c.evidence || {}, tr = c.transcript || [], br = ev.brief;
+  const live = ["ananse_waiting","ananse_engaged","evidence_ready"].includes(c.status);
+  const keep = document.getElementById("chat"); const wasBottom = keep ? keep.scrollTop + keep.clientHeight >= keep.scrollHeight - 30 : true;
+  $("detail").innerHTML = `
+    <div class="dh"><div><h2>${esc(c.entity || "Unnamed offer")}</h2>
+      <span class="lvl ${c.level}">${c.level==="RED"?"High risk":c.level==="YELLOW"?"Not sure":"Looks licensed"}</span>
+      <span class="badge ${c.status}">${STATUS[c.status]||c.status}</span>
+      <small style="color:#666;margin-left:6px">Case #${c.id} · ${SRC[c.source]||c.source}</small></div>
+      ${live ? `<a class="ananse" href="/ananse.html?case=${c.id}" target="_blank">🕷️ Open Ananse's chat</a>` : ""}</div>
+    ${br ? `<div class="brief"><b>🕷️ Ananse's brief</b><p>${esc(br.summary)}</p><ul class="r">${br.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul><p class="next">${esc(br.next)}</p></div>`
+         : (isCitizen(c) && c.level!=="GREEN" ? '<div class="brief"><b>🕷️ Ananse is picking this up…</b></div>' : "")}
+    <div class="two">
+      <div><h4>Evidence captured</h4>${evHTML(ev)}
+        <h4 style="margin-top:18px">Account lookup</h4>${acctHTML(ev.account_lookups)}
+        <h4 style="margin-top:18px">Website inspection</h4>${siteHTML(ev.site_reports)}
+        <h4 style="margin-top:18px">Why it was flagged</h4><ul class="r">${(c.reasons||[]).map(r=>`<li>${esc(r)}</li>`).join("") || "<li>No reasons recorded.</li>"}</ul></div>
+      <div><h4>Conversation (Ananse = Kofi)</h4>
+        <div class="chat" id="chat">${tr.length ? tr.map(m=>`<div class="msg ${m.role}"><small>${m.role==="zeus"?"Ananse":(m.note||"Suspected scammer")}</small>${esc(m.text)}</div>`).join("") : '<p class="note" style="margin:6px">No conversation yet.</p>'}</div>
+        <div class="sim">⚠️ Demo build: the suspect is a teammate or a scripted simulator. Live engagement needs SEC authorisation. Ananse never sends money or real personal data.</div></div>
+    </div>
+    <div class="actions">
+      <button class="act" data-a="warning_approved">Approve public warning</button>
+      <button class="act" data-a="momo_flag_requested">Request MoMo number flag</button>
+      <button class="act" data-a="referred">Refer to CSA / Police</button>
+      <button class="act" data-a="dismissed">Dismiss</button></div>
+    <p class="note">${c.action ? "✅ " + esc(c.action) : "Nothing is sent or published until an officer approves it."}</p>`;
+  const chat = $("chat"); if (chat && wasBottom) chat.scrollTop = chat.scrollHeight;
+  document.querySelectorAll(".act").forEach(b => b.onclick = async () => {
+    const out = await j(`/api/cases/${c.id}/action`, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({action:b.dataset.a})});
+    renderDetail(out); refresh();
+  });
+}
+$("seedBtn").onclick = async () => { const r = await j("/api/watchlist/seed", {method:"POST"}); await refresh(); $("seedBtn").textContent = r.added ? `Loaded ${r.added} entities` : "Already loaded"; };
+refresh(); setInterval(refresh, 4000);
+</script>
+</body>
+</html>

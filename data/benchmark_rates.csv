@@ -1,0 +1,4 @@
+instrument,interest_rate_pct_pa,auction_date,source_url
+91-day T-bill,4.6135,2026-10-23,https://www.bog.gov.gh/wp-content/uploads/2026/10/Auctresults-2030.pdf
+182-day T-bill,6.2929,2026-10-23,https://www.bog.gov.gh/wp-content/uploads/2026/10/Auctresults-2030.pdf
+364-day T-bill,9.6739,2026-10-23,https://www.bog.gov.gh/wp-content/uploads/2026/10/Auctresults-2030.pdf

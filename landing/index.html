@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Veridex | Before you invest, verify</title>
+<meta name="description" content="Check an investment offer in seconds. Veridex checks it against official licence lists and known scam warning signs, and answers in plain language.">
+<link rel="icon" href="images/telegram-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="#top">Veridex</a>
+  <nav><a href="#about">About</a><a href="#how" class="hide-sm">How it works</a><a href="#faqs">FAQs</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <h1>Before you invest, verify.</h1>
+    <p class="sub">Your children's <b>education</b>, your family's <b>livelihood</b> and your <b>future</b> deserve protection.<br>Take a moment to <b>verify before you invest</b>.</p>
+    <div class="cta">
+      <a class="btn tg" id="tgBtn" href="#"><img src="images/telegram-icon.png" alt="">Chat with our verification bot.</a>
+      <a class="btn wa off" id="waBtn" href="#"><img src="images/whatsapp-icon.png" alt="">Chat with our verification bot. <span class="soon">Coming soon</span></a>
+    </div>
+    <p class="note" id="ussdNote"></p>
+  </div>
+  <img class="hero-img" src="images/hero.webp" alt="Ghanaians of every walk of life: a teacher, a farmer, a student, a nurse, a young professional and a market trader">
+</div>
+
+<section id="sources" style="padding-top:60px">
+  <div class="wrap">
+    <p class="built">Built on official data from</p>
+    <p class="built-sub">Every check uses public information published by Ghana's regulators.</p>
+    <div class="sources">
+      <div class="src"><b>Securities and Exchange Commission (SEC)</b><small>Public warnings about unlicensed schemes, revoked licences and newly licensed firms</small></div>
+      <div class="src"><b>National Pensions Regulatory Authority (NPRA)</b><small>Licensed pension fund managers, trustees and custodians</small></div>
+      <div class="src"><b>Bank of Ghana (BoG)</b><small>Treasury bill rates, used to test whether promised returns are realistic</small></div>
+      <div class="src"><b>Cyber Security Authority (CSA)</b><small>Published figures and warnings on online investment fraud</small></div>
+    </div>
+    <div class="logos" id="backedBy" hidden>
+      <h2 style="width:100%;margin:0">Backed By Trusted Institutions</h2>
+      <img src="images/bog-logo.png" alt="Bank of Ghana"><img src="images/sec-logo.png" alt="Securities and Exchange Commission"><img src="images/csa-logo.png" alt="Cyber Security Authority">
+    </div>
+  </div>
+</section>
+
+<section id="try" class="band" hidden>
+  <div class="wrap try">
+    <h2>Try it now</h2>
+    <p class="lead">Paste the message, company name or link you were given.</p>
+    <textarea id="offer" placeholder="Example: Invest GHS 2,000 with QX Broker and get 20% every week, guaranteed. Pay to 0244 556 781 today only."></textarea>
+    <button class="go" id="goBtn">Check this offer</button>
+    <div class="result" id="result"></div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="lead">Three steps, about ten seconds, no forms and no sign-up.</p>
+    <div class="steps">
+      <div class="card"><div class="num">1</div><h3>Send us the offer</h3><p>Type it, forward the message, or send a voice note in your language. You do not need to give your name.</p></div>
+      <div class="card"><div class="num">2</div><h3>We run six checks</h3><p>We look at official licence lists, whether the returns are realistic, how you are asked to pay, how old their website is, whether it has been reported, and any pressure tricks.</p></div>
+      <div class="card"><div class="num">3</div><h3>Get a clear answer</h3><p>Red, yellow or green, with the reasons in plain words and what to do next. In Twi, Ga, Ewe, Fante, Dagbani or English, and read out loud if you prefer.</p></div>
+    </div>
+    <div class="legend"><span class="pill r">🔴 Danger: do not pay</span><span class="pill y">🟡 Not sure: do not pay yet</span><span class="pill g">🟢 Looks licensed: still confirm</span></div>
+  </div>
+</section>
+
+<section class="band" id="checks">
+  <div class="wrap">
+    <h2>Our six checks</h2>
+    <p class="lead">One licence check is not enough, because scammers copy real company names. So we look at six things.</p>
+    <div class="checks">
+      <div class="chk"><span>📋</span><div><b>Official licence lists</b><small>SEC, pension regulator and newly licensed firms.</small></div></div>
+      <div class="chk"><span>📈</span><div><b>Realistic returns</b><small>"20% a week" is over 1,000% a year. The Government pays under 10% on 1-year Treasury bills.</small></div></div>
+      <div class="chk"><span>💳</span><div><b>Safe way to pay</b><small>Licensed firms do not ask you to pay into a personal MoMo number or pay a fee to withdraw.</small></div></div>
+      <div class="chk"><span>🌐</span><div><b>Website age</b><small>A website created last month is a warning sign.</small></div></div>
+      <div class="chk"><span>🚩</span><div><b>Already reported</b><small>Numbers, links and handles seen in earlier scam reports and public warnings.</small></div></div>
+      <div class="chk"><span>⏱️</span><div><b>Pressure and recruiting</b><small>"Today only", "bring your friends": real investments do not rush you.</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap" style="max-width:820px">
+    <h2>About Veridex</h2>
+    <p class="lead" style="margin-bottom:18px">Investment scams reach people on WhatsApp, Telegram and the phone, at the moment they are most hopeful. Checking should be just as easy: no website to visit, no jargon to decode.</p>
+    <p class="lead" style="margin-bottom:0">Veridex was built for the SEC–ALX Virtual &amp; Digital Assets Hackathon 2026. It gives people a simple answer in their own language, and it gives the SEC a clear view of the scams people are being offered.</p>
+  </div>
+</section>
+
+<section class="band" id="faqs">
+  <div class="wrap faq">
+    <h2>Frequently asked questions</h2>
+    <p class="lead" style="margin-bottom:26px">Straight answers.</p>
+    <details><summary>Can you tell me if an investment is safe?</summary><p>No one can promise that. We tell you whether the company is on official lists and whether the offer shows known scam warning signs. A green result means "looks licensed", not "guaranteed". Always confirm with the SEC on 0800 100 065 before you pay.</p></details>
+    <details><summary>Is Veridex an official SEC service?</summary><p>No. Veridex is an independent project built for the SEC–ALX hackathon. We use public information published by the SEC and other regulators. For official confirmation, contact the SEC directly.</p></details>
+    <details><summary>Is it free?</summary><p>Yes. Checking an offer costs you nothing.</p></details>
+    <details><summary>What happens to my message?</summary><p>We save the text you send and your chat ID, so we can spot scams that keep returning. If you press "Report this to the SEC", your report is passed to the SEC team. Never send passwords, PINs, OTP codes or your Ghana Card number.</p></details>
+    <details><summary>I already paid. What do I do?</summary><p>Act fast, because the first hours matter most. Call your mobile money provider or bank right away and tell them it was a scam. Then report it to the Cyber Security Authority on 292 and to the SEC on 0800 100 065. Keep every screenshot and receipt.</p></details>
+    <details><summary>Which languages do you support?</summary><p>English, Twi, Ga, Ewe, Fante and Dagbani, as text and as a spoken answer. Local-language voice is still being tested, so some answers may come in English first.</p></details>
+    <details><summary>I do not have a smartphone or internet. Can I still use it?</summary><p>That is what we are building next: a phone-call line and a USSD code, so anyone with any phone can check an offer. They are on our roadmap and not live yet.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><a class="logo" href="#top" style="font-size:30px">Veridex</a><p style="margin:10px 0 0;max-width:340px">Before you invest, verify. Free, simple and in your language.</p></div>
+      <div><h4>Explore</h4><ul><li><a href="#how">How it works</a></li><li><a href="#checks">Our six checks</a></li><li><a href="#about">About</a></li><li><a href="#faqs">FAQs</a></li></ul></div>
+      <div><h4>Need help now?</h4><ul><li>SEC toll-free: <b>0800 100 065</b></li><li>SEC main line: 0302 768 970-2</li><li>Cyber Security Authority: <b>292</b></li></ul></div>
+    </div>
+    <p class="disc">Veridex is an independent hackathon project built for the SEC–ALX Virtual &amp; Digital Assets Hackathon 2026. It is not an official service of the Securities and Exchange Commission, the Bank of Ghana, the National Pensions Regulatory Authority or the Cyber Security Authority. Results are information, not financial advice, and are only as current as the public lists we use. Always confirm with the SEC before you pay.</p>
+  </div>
+</footer>
+
+<script src="site-config.js"></script>
+<script>
+const C = window.VERIDEX, $ = id => document.getElementById(id);
+$("tgBtn").href = C.TELEGRAM_URL;
+if (C.WHATSAPP_LIVE && C.WHATSAPP_URL) { $("waBtn").href = C.WHATSAPP_URL; $("waBtn").classList.remove("off"); $("waBtn").querySelector(".soon").remove(); }
+$("ussdNote").innerHTML = C.USSD_LIVE ? "No internet? No problem. Dial <b>*123#</b> or call our toll-free number <b>123</b> to get started."
+  : "No smartphone or internet? A phone-call and USSD service is coming soon.";
+if (C.SHOW_BACKED_BY) $("backedBy").hidden = false;
+if (C.API_BASE) $("try").hidden = false;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+$("goBtn").onclick = async () => {
+  const text = $("offer").value.trim(); if (!text) return;
+  const btn = $("goBtn"), box = $("result"); btn.disabled = true; btn.textContent = "Checking...";
+  try {
+    const r = await fetch(C.API_BASE + "/api/check", {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({text, channel:"web"})});
+    if (!r.ok) throw new Error(r.status); const v = await r.json();
+    box.className = "result " + v.level; box.style.display = "block";
+    box.innerHTML = `<h3>${esc(v.headline)}</h3><div class="rchecks">${v.checks.map(c=>`<div>${c.icon} ${esc(c.label)}</div>`).join("")}</div>
+      <b>Why</b><ul>${v.reasons.slice(0,5).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+      <b>What to do now</b><ol>${v.do_now.map(x=>`<li>${esc(x)}</li>`).join("")}</ol><div class="comfort">${esc(v.comfort)}</div>`;
+  } catch (e) {
+    box.className = "result"; box.style.display = "block";
+    box.innerHTML = "Sorry, the checker is not reachable right now. Please try our Telegram bot instead.";
+  }
+  btn.disabled = false; btn.textContent = "Check this offer";
+};
+</script>
+</body>
+</html>

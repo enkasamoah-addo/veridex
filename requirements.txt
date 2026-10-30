@@ -1,0 +1,10 @@
+fastapi
+gTTS
+httpx
+imageio-ffmpeg
+khaya
+pandas
+python-telegram-bot
+rapidfuzz
+streamlit
+uvicorn
